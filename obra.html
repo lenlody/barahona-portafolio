@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Obra - Belén Barahona</title>
+    <style>
+        body {
+            background-image: url("img/ee2.png"); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            min-height: 100vh;
+            padding-top: 250px; 
+            padding-bottom: 100px;
+        }
+
+        #mensaje-obra {
+            position: fixed;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 2000;
+            display: none;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .cabecera-flotante {
+            width: 60%; 
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end; 
+            padding-top: 30px; 
+            margin-bottom: 22px; 
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .menu-flotante {
+            display: flex;
+            gap: 15px;
+            font-weight: bold;
+            font-size: 26px; 
+        }
+
+        .menu-flotante a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu-flotante a.activo {
+            color: #8c8c8c;
+            cursor: pointer;
+        }
+
+        .separador {
+            margin: 0 5px;
+            color: white;
+        }
+
+        .nombre-flotante {
+            color: black;
+            font-weight: bold;
+            font-size: 28px; 
+            margin-top: 5px; 
+        }
+
+        .contenedor-obras {
+            width: 60%; 
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .fila-especial {
+            display: flex;
+            align-items: flex-start; 
+            gap: 30px;
+        }
+
+        .obra-item {
+            background-color: white;
+            padding: 12px; 
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: black;
+            text-align: center;
+            min-height: 320px;
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .bloque-texto {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex-grow: 1;
+        }
+
+        .texto-titulo {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: black;
+            text-align: left;
+        }
+
+        .descripcion-fanzine {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: black;
+            text-align: left;
+            line-height: 1.4;
+            max-width: 650px;
+        }
+
+        .mini-grilla {
+            display: grid;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .mini-item {
+            background-color: white;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+            border: 1px solid #f0f0f0;
+            border-radius: 2px;
+            overflow: visible;
+            position: relative;
+        }
+
+        .mini-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .mini-item:hover img {
+            object-fit: fill; 
+            transform: scale(1.5); 
+            z-index: 999;
+            box-shadow: 0px 20px 40px rgba(0,0,0,0.6);
+            height: auto; 
+            max-height: 450px;
+            position: relative;
+        }
+
+        .obra-imagen {
+            width: 100%;
+            aspect-ratio: 3 / 4; 
+            border: 1px solid #f0f0f0;
+            margin-bottom: 10px;
+            overflow: visible;
+            position: relative;
+        }
+
+        .obra-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease-in-out;
+            display: block;
+        }
+
+        .obra-imagen:hover img {
+            object-fit: fill; 
+            transform: scale(1.8); 
+            z-index: 999;
+            box-shadow: 0px 20px 40px rgba(0,0,0,0.6);
+            height: auto; 
+            max-height: 500px;
+            position: relative;
+        }
+
+        .obra-titulo-polaroid {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px; 
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .obra-descripcion-base {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px; 
+            line-height: 1.2;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mensaje-obra">Los verdaderos artistas son de izquierda. Disculpa, quise decir, ya estás en obra.</div>
+
+    <div class="cabecera-flotante">
+        <div class="menu-flotante">
+            <a href="index.html">inicio</a>
+            <span class="separador">|</span>
+            <a onclick="mostrarMensaje()" class="activo">obra</a>
+            <span class="separador">|</span>
+            <a href="contacto.html">contacto</a>
+        </div>
+        <div class="nombre-flotante">
+            Belén Barahona | obra
+        </div>
+    </div>
+
+    <div class="contenedor-obras">
+        <!-- SECCIÓN 1: Fanzine I -->
+        <div class="fila-especial">
+            <div class="obra-item">
+                <div class="obra-imagen"><img src="img/fanzine1.jpg" alt="Fanzine I"></div>
+                <div class="obra-descripcion-base">Reverso y portada de fanzine. Monotipos con collage e impresión digital. Entrega de grabado, 3er año.</div>
+            </div>
+            <div class="bloque-texto">
+                <div class="texto-titulo">Fanzine I</div>
+                <div class="descripcion-fanzine">Trabajo de 12 páginas en formato fanzine, realizada a base de monotipos y collage manual. Entrega de grabado de 3er año, 2025.</div>
+                <div class="mini-grilla" style="grid-template-columns: repeat(3, 180px);">
+                    <div class="mini-item" style="width:180px; height:135px;"><img src="img/pag2.jpeg"></div>
+                    <div class="mini-item" style="width:180px; height:135px;"><img src="img/pag3.jpeg"></div>
+                    <div class="mini-item" style="width:180px; height:135px;"><img src="img/pag4.jpeg"></div>
+                    <div class="mini-item" style="width:180px; height:135px;"><img src="img/pag5.jpeg"></div>
+                    <div class="mini-item" style="width:180px; height:135px;"><img src="img/pag6.jpeg"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: Fanzine II -->
+        <div class="fila-especial">
+            <div class="obra-item">
+                <div class="obra-imagen"><img src="img/fa1.png" alt="Fanzine II"></div>
+                <div class="obra-descripcion-base">Reverso y portada de fanzine. Collage digital que incluye trabajos anteriores impreso sobre papel.</div>
+            </div>
+            <div class="bloque-texto">
+                <div class="texto-titulo">Fanzine II: collage, transparencia, tiempo, hacer, hacer.</div>
+                <div class="descripcion-fanzine">Collage digital basado en trabajos de grabado, impresos en papel en formato fanzine. Entrega de grabado de 3er año, 2025.</div>
+                <div class="mini-grilla" style="grid-template-columns: repeat(4, 160px);">
+                    <div class="mini-item" style="width:160px; height:120px;"><img src="img/fa2.png"></div>
+                    <div class="mini-item" style="width:160px; height:120px;"><img src="img/fa3.png"></div>
+                    <div class="mini-item" style="width:160px; height:120px;"><img src="img/fa4.png"></div>
+                    <div class="mini-item" style="width:160px; height:120px;"><img src="img/fa5.png"></div>
+                    <div class="mini-item" style="width:160px; height:120px;"><img src="img/fa6.png"></div>
+                    <div class="mini-item" style="width:160px; height:120px;"><img src="img/fa7.png"></div>
+                    <div class="mini-item" style="width:160px; height:120px;"><img src="img/fa8.png"></div>
+                    <div class="mini-item" style="width:160px; height:120px;"><img src="img/fa9.png"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: Sin título 1 -->
+        <div class="fila-especial">
+            <div class="bloque-texto">
+                <div class="texto-titulo">Sin título 1: collage digital.</div>
+                <div class="descripcion-fanzine">Collage digital en base a dibujos y monotipos escaneados. Entrega de grabado, 4to año, 2026.</div>
+                <div class="mini-grilla" style="grid-template-columns: repeat(3, 240px);">
+                    <div class="mini-item" style="width:240px; height:180px;"><img src="img/ba1.png"></div>
+                    <div class="mini-item" style="width:240px; height:180px;"><img src="img/ba2.png"></div>
+                    <div class="mini-item" style="width:240px; height:180px;"><img src="img/ba3.png"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4: Obras individuales -->
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <!-- Mujer -->
+            <div class="obra-item" style="width:auto;">
+                <div class="obra-imagen"><img src="img/collg.png" alt="Mujer"></div>
+                <div class="obra-titulo-polaroid">Mujer</div>
+                <div class="obra-descripcion-base">Collage manual con impresiones digitales, pintura acrílica, xilografía con goma eva. 2026, 4to año.</div>
+            </div>
+            <!-- Mariposa -->
+            <div class="obra-item" style="width:auto;">
+                <div class="obra-imagen"><img src="img/mariposa.png" alt="Mariposa"></div>
+                <div class="obra-titulo-polaroid">Mariposa</div>
+                <div class="obra-descripcion-base">Litografía en piedra, impresión sobre papel. 2024, 2do año.</div>
+            </div>
+            <!-- Fantasía -->
+            <div class="obra-item" style="width:auto;">
+                <div class="obra-imagen"><img src="img/pap.png" alt="Fantasía"></div>
+                <div class="obra-titulo-polaroid">Fantasía</div>
+                <div class="obra-descripcion-base">Collage manual intervenido con monotipos, entrega de grabado 2025, 3er año.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            const mensaje = document.getElementById('mensaje-obra');
+            mensaje.style.display = 'block';
+            setTimeout(() => { mensaje.style.display = 'none'; }, 4000);
+        }
+    </script>
+</body>
+</html>

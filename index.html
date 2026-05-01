@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Belén Barahona</title>
+    <style>
+        body {
+            background-image: url("img/ee2.png"); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #mensaje-inicio {
+            color: white;
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+            font-size: 24px;
+            margin-bottom: 20px;
+            opacity: 0; 
+            transition: opacity 0.5s ease; 
+            height: 30px; 
+        }
+
+        .contenedor {
+            background-color: white;
+            width: 55%; 
+            height: 50%; 
+            border-radius: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 10px 40px rgba(0,0,0,0.25);
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .cabecera {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 25px 40px 0px 40px;
+            box-sizing: border-box;
+            height: 40%; 
+        }
+
+        .menu {
+            display: flex;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+            color: black;
+            margin-top: 15px;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .activo {
+            font-weight: bold;
+        }
+
+        .separador {
+            margin: 0 12px;
+        }
+
+        .bloque h2 {
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 75px; 
+            line-height: 0.8;
+            text-align: right;
+            color: black;
+        }
+
+        .imagen-contenedor {
+            width: 100%;
+            height: 60%; 
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .imagen-contenedor img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: 20% 20%; 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mensaje-inicio">¡Ya estás en el inicio! ¿... O no?</div>
+
+    <div class="contenedor">
+        <div class="cabecera">
+            <div class="menu">
+                <a id="boton-inicio" class="menu-item activo">inicio</a>
+                <span class="separador">|</span>
+                <a href="obra.html" class="menu-item">obra</a>
+                <span class="separador">|</span>
+                <!-- 🔧 CAMBIO AQUÍ: Ahora apunta a contacto.html -->
+                <a href="contacto.html" class="menu-item">contacto</a>
+            </div>
+
+            <div class="bloque">
+                <h2>Belén<br>Barahona</h2>
+            </div>
+        </div>
+
+        <div class="imagen-contenedor">
+            <img src="img/ue2.png" alt="Obra de Belén Barahona">
+        </div>
+    </div>
+
+    <script>
+        const botonInicio = document.getElementById('boton-inicio');
+        const mensaje = document.getElementById('mensaje-inicio');
+
+        botonInicio.addEventListener('click', function() {
+            mensaje.style.opacity = '1'; 
+            
+            setTimeout(() => {
+                mensaje.style.opacity = '0';
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>

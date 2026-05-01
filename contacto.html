@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Belén Barahona</title>
+    <style>
+        body {
+            background-image: url("img/ee.png"); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Contenedor delgado */
+        .contenedor {
+            background-color: white;
+            width: 60%; 
+            height: 20%; 
+            border-radius: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0px 10px 40px rgba(0,0,0,0.25);
+            padding: 0 45px;
+        }
+
+        .cabecera {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .menu {
+            display: flex;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+            color: black;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: black;
+        }
+
+        .activo {
+            font-weight: bold;
+        }
+
+        .separador {
+            margin: 0 12px;
+        }
+
+        /* Nombre y sección: solo negrita, sin cursiva */
+        .bloque h2 {
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+            font-style: normal; /* 🔧 Sin cursiva */
+            font-weight: bold;  /* 🔧 Solo negrita */
+            font-size: 22px; 
+            text-align: right;
+            color: black;
+        }
+
+        .contenido-contacto {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <div class="cabecera">
+            <div class="menu">
+                <a href="index.html" class="menu-item">inicio</a>
+                <span class="separador">|</span>
+                <a href="obra.html" class="menu-item">obra</a>
+                <span class="separador">|</span>
+                <a href="#" class="menu-item activo">contacto</a>
+            </div>
+
+            <div class="bloque">
+                <h2>Belén Barahona | contacto</h2>
+            </div>
+        </div>
+
+        <div class="contenido-contacto">
+            Correo: belen.barahona123@gmail.com
+        </div>
+    </div>
+
+</body>
+</html>
